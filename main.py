@@ -144,29 +144,8 @@ class Bot:
                 print("\nNew bar!")
                 print(f'Date {self.currentBar.date} O: {self.currentBar.open} H {self.currentBar.high} L {self.currentBar.low} C {self.currentBar.close}')
                 
-                #! Insert Strategy Here
+                #! Run Strategy Here:
                 self.strategy.run(bars=self.bars, contract=self.contract, orderId=orderId, ib=self.ib)
-                
-                # Check Criteria
-                # if (bar.close > lastHigh
-                #     and self.currentBar.low > lastLow
-                #     and bar.close > str(self.sma[len(self.sma)-1])
-                #     and lastClose < str(self.sma[len(self.sma)-2])):
-                    #Bracket Order 2% Profit Target 1% Stop Loss
-                    # profitTarget = bar.close*1.02
-                    # stopLoss = bar.close*0.99
-                    # quantity = 1
-                    # bracket = self.bracketOrder(orderId,"BUY",quantity, profitTarget, stopLoss)
-                    # contract = Contract()
-                    # contract.symbol = self.symbol.upper()
-                    # contract.secType = "STK"
-                    # contract.exchange = "SMART"
-                    # contract.currency = "USD"
-                    # #Place Bracket Order
-                    # for o in bracket:
-                    #     o.ocaGroup = "OCA_"+str(orderId)
-                    #     self.ib.placeOrder(o.orderId,contract,o)
-                    # orderId += 3
 
                 self.instantiate_new_bar(bar) #* Create a New Realtime Bar
 

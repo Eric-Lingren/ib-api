@@ -38,10 +38,10 @@ class Strategy:
 
             #Place Bracket Order
             for o in bracket:
-                print(o)
-            #     o.ocaGroup = "OCA_"+str(orderId)
-            #     ib.placeOrder(o.orderId,contract,o)
-            # orderId += 3
+                # print(o)
+                o.ocaGroup = "OCA_"+str(orderId)
+                ib.placeOrder(o.orderId,contract,o)
+            orderId += 3
 
     
 
